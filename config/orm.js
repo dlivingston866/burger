@@ -1,7 +1,7 @@
 //Import MySQL connection.
 const connection = require("../config/connection.js");
 
-function printQuestionMarks(num) {
+function PrintQuestionMarks(num) {
     var arr = [];
     for (let i = 0; i < num; i++) {
         arr.push("?");

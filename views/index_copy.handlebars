@@ -3,15 +3,17 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-4">
             <h2 class="header">Burgers to Devour</h2>
             {{#each burgers}}
                 {{#unless this.devoured}}
                         <div class="form-group">
-                        
-                            {{this.burger_name}}
-                            <input type="button" class="btn- btn-warning devour-button" id="{{this.id}}" value="devouer it"></input>
-                           
+                            <ul>
+                                <li>
+                                
+                                    <button type="submit" name="devoured" value= {{this.id}} class="btn btn-warning eaten">{{burger_name}}</button>
+                                </li>
+                            </ul>
                         </div>
                   
                 {{/unless}}

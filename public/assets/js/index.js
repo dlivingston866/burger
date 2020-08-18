@@ -1,8 +1,12 @@
 console.log("Alive");
-document.addEventListener("ready", function() {
-    document.querySelectorAll('.eaten').forEach(item => {
-        item.addEventListener('submit', event => {
-            //handle click
-        })
-    })
+$(document).on("click", ".devour-button", function(e) {
+    console.log(e);
+    console.log("click");
+    $.ajax({
+        url: "/burgers/update/" + e.target.id,
+        method: "PUT",
+        data: { "devoured": 1 }
+    }).done(function() {
+
+    });
 });

@@ -20,6 +20,7 @@ function objToSql(ob) {
             arr.push(key + "=" + value);
         }
     }
+    console.log(arr.toString());
     return arr.toString();
 };
 
@@ -43,9 +44,9 @@ const orm = {
             cb(result);
         });
     },
-    updateOne: function(table, objColVals, condition, cb) {
-        var queryString = `UPDATE ${TABLE} SET ${objToSql(objColVals)} WHERE ${condition};`;
-        connection.query(queryString, function(err, result) {
+    updateOne: function(table, id, devoured, cb) {
+        var queryString = `UPDATE ${table} SET devoured=?  WHERE id=?;`;
+        connection.query(queryString, [devoured, id], function(err, result) {
             if (err) {
                 throw err;
             }

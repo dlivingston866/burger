@@ -11,7 +11,7 @@ if (process.env.JAWSDB_URL) {
         password: "sedonaaz",
         database: "burgers_db"
     });
-});
+}
 //Make connection
 connection.connect(function(err) {
     if (err) {
